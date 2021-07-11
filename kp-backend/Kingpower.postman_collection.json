@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "d93d77d1-fd25-47eb-8a46-0220e8fe4979",
+		"name": "Kingpower",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"sku\": \"P8101\",\n        \"type\": \"parent\",\n        \"name\": \"iPhone\"\n    },\n    {\n        \"sku\": \"8101\",\n        \"type\": \"child\",\n        \"name\": \"iPhone 64GB\",\n        \"parentSku\": \"P8101\"\n    },\n    {\n        \"sku\": \"8102\",\n        \"type\": \"child\",\n        \"name\": \"iPhone 128GB\",\n        \"parentSku\": \"P8101\"\n    },\n    {\n        \"sku\": \"4501\",\n        \"type\": \"standalone\",\n        \"name\": \"Donut chocolate\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Stock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"sku\": \"8101\",\n        \"quantity\": 0\n    },\n    {\n        \"sku\": \"4501\",\n        \"quantity\": 3\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"stocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stock List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"sku\": \"P8101\",\n        \"type\": \"parent\",\n        \"name\": \"iPhone\"\n    },\n    {\n        \"sku\": \"8101\",\n        \"type\": \"child\",\n        \"name\": \"iPhone 64GB\",\n        \"parentSku\": \"P8101\"\n    },\n    {\n        \"sku\": \"8102\",\n        \"type\": \"child\",\n        \"name\": \"iPhone 128GB\",\n        \"parentSku\": \"P8101\"\n    },\n    {\n        \"sku\": \"4501\",\n        \"type\": \"standalone\",\n        \"name\": \"Donut chocolate\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"stocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adjust Stock",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n    \"sku\": \"8101\",\n    \"operator\": \"add\",\n    \"quantity\": 1\n    },\n    {\n    \"sku\": \"4501\",\n    \"operator\": \"deduct\",\n    \"quantity\": 10\n} ]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"stocks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
